@@ -2,7 +2,7 @@
 	"name": "mars-rover",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.ts",
+	"main": "mission-control.ts",
 	"scripts": {
 		"test": "jest"
 	},
