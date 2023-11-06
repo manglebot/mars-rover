@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",   // Specify the ECMAScript version you want to target
+      "module": "CommonJS", // Specify the module system you want to use
+      "outDir": "./dist",   // Specify the output directory for transpiled code
+      "rootDir": "./src",   // Specify the root directory of your source code
+      "strict": true,       // Enable strict type checking
+      "esModuleInterop": true // Allow default imports from CommonJS modules
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+  }
+  

@@ -1,6 +1,7 @@
-import { missionControl } from './src/mission-control';
-// import { clear, print, askQuestion } from './src/ui/console';
+// import { missionControl } from './src/mission-control';
 
-export function moveRover(test):string {
+ 
+export function moveRover(moveData:string ):string {
+	console.log(moveData);
 	return "00N";
 }
