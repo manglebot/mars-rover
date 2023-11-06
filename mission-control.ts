@@ -4,12 +4,19 @@ import { createMap } from './src/map';
 
 
 
-createMap(5,5);
 
-
-const rover: Vehicle = { xLocation:5, yLocation:5, direction:'N'}
+// create rover1
+const rover1: Vehicle = { x:5, y:5, direction:'N'}
  
-export function moveRover(moveData:string ):string {
-	console.log(rover);
+export function moveRover(plateauSize: string ):string {
+
+	const mapWidth = plateauSize[0];
+	const mapHeight = plateauSize[1];
+	
+	// console.log ("mapWidth "+mapWidth+" mapHeight "+mapHeight);
+// create a test map. There is a console log within the map module.
+	createMap(Number(mapWidth),Number(mapHeight));
+
+	console.log(rover1);
 	return "00N";
 }

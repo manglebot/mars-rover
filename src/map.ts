@@ -5,7 +5,7 @@ export function createMap(rowCount: number, columnCount: number): void {
         { length: rowCount },           // take rowCount as length
         (_, i) => Array.from(           // fill with new array
             { length: columnCount },    // take columnCount for every row
-            (_, j) => [i, j].join('')  // initialize cell with some value
+            (_, j) => [rowCount - i -1, j].join('')  // initialize cell with some value
         )
     );
 
@@ -13,7 +13,5 @@ export function createMap(rowCount: number, columnCount: number): void {
     console.log(map);
 
 }
-
-// createMap(4, 8);
 
 
