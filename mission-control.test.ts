@@ -1,7 +1,7 @@
 import { moveRover } from './mission-control';
 
 test('moveRover should return "00N"', () => {
-  const result = moveRover('66'); // Pass relevant test data here
+  const result = moveRover('66', '32N', 'N'); // Set map size
   expect(result).toBe('00N');
 });
 

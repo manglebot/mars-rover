@@ -1,22 +1,27 @@
 // import { missionControl } from './src/mission-control';
 import type { Vehicle } from './src/vehicle';
 import { createMap } from './src/map';
+import { moveVehicle } from './src/move-vehicle'
 
 
 
 
-// create rover1
-const rover1: Vehicle = { x:5, y:5, direction:'N'}
  
-export function moveRover(plateauSize: string ):string {
+export function moveRover(plateauSize: string, vehicleStartPosition: string, move: string ):string {
 
-	const mapWidth = plateauSize[0];
-	const mapHeight = plateauSize[1];
-	
-	// console.log ("mapWidth "+mapWidth+" mapHeight "+mapHeight);
-// create a test map. There is a console log within the map module.
-	createMap(Number(mapWidth),Number(mapHeight));
+	// set up grid
+	createMap(Number(plateauSize[0]),Number(plateauSize[1]));
+
+	// set up vehicle 1
+	const rover1: Vehicle = { x:Number(vehicleStartPosition[0]), y:Number(vehicleStartPosition[1]), direction:vehicleStartPosition[2]};
 
 	console.log(rover1);
+	// moveVehicle(rover1);
+
+	const result = moveVehicle(rover1);
+	console.log(result); // This will print "the return position will appear here!!" to the console
+
+
+
 	return "00N";
 }
