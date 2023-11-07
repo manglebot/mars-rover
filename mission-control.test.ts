@@ -1,9 +1,18 @@
 import { operationGo } from './mission-control';
 
-test('moveRover should return "13N"', () => {
+test('operationGo should return "13N 51E"', () => {
   const result = operationGo('55', '12N', 'LMLMLMLMM', '33E', 'MMRMMRMRRM'); // Set map size
   expect(result).toBe('13N 51E');
 });
+
+// test('moveRover will crash error', () => {
+//   const result = operationGo('55', '12N', 'LMLMLMLMM', '12N', 'LMLMLMLMM'); // Set map size
+//   expect(result).toBe('13N 13N');
+// });
+
+
+
+
 
 // test('moveRover should return "51E"', () => {
 //   const result = operationGo('55', '33E', 'MMRMMRMRRM'); // Set map size
