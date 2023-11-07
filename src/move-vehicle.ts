@@ -1,18 +1,56 @@
-import type { Vehicle } from "./vehicle"
+import type { Vehicle } from "./vehicle";
 
-export function moveVehicle(vehicleName:Vehicle):string  {
+export function moveVehicle(vehicleName: Vehicle, vehicleStartPosition: string, moveInstructions: string): string {
 
-    if(vehicleName.direction === 'N'){
-        console.log("vehicleName.y before = "+vehicleName.y);
-        vehicleName.y += 1;
-        
+const moveInstructionsArray = moveInstructions.split('');
+
+const initialDirection = vehicleStartPosition[2];
+const compass = "NESW";
+
+// turn current position into index number (to cycle through compass)
+let currentDirection = compass.indexOf(initialDirection);
+
+// turn left or right or move!
+moveInstructionsArray.forEach(instruction => {
+    if(instruction === 'L'){
+        turnLeft();
+    } else if (instruction === 'R'){
+        turnRight();
+    } else {
+        switch (vehicleName.direction) {
+            case "N":
+              vehicleName.y += 1;
+              break;
+            case "E":
+              vehicleName.x += 1;
+              break;
+            case "S":
+              vehicleName.y -= 1;
+              break;
+            case "W":
+              vehicleName.x -= 1;
+              break;
+          }
     }
-// for each movement.... do somthing!!
+});
+
+function turnLeft() {
+    currentDirection = (currentDirection - 1 + 4) % 4;
+    return vehicleName.direction = compass[currentDirection];
+}
+
+function turnRight() {
+    currentDirection = (currentDirection + 1) % 4;
+    return vehicleName.direction = compass[currentDirection];
+}
+
+console.log("move instructions are "+moveInstructions);
+
+// need to add M action before switch is triggered
+
+    // if x or y  > allowed then run errorHander
 
 
-    // if ( direction === 'N'){
-    //     Vehicle += 1;   
-    //     return
-    // }
-    return `the y position is ${vehicleName.y}!!`
+
+    return `${vehicleName.x}${vehicleName.y}${vehicleName.direction}`;
 }
