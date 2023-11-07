@@ -2,16 +2,15 @@ let map: string[][];
 
 export function createMap(rowCount: number, columnCount: number): void {
     map = Array.from(
-        { length: rowCount },           // take rowCount as length
-        (_, i) => Array.from(           // fill with new array
-            { length: columnCount },    // take columnCount for every row
-            (_, j) => [rowCount - i -1, j].join('')  // initialize cell with some value
+        { length: rowCount },
+        (_, i) => Array.from(
+            { length: columnCount },
+            (_, j) => [rowCount -i -1, j].join('')
         )
     );
 
-    // console.log(map[5][5]);
+    // shows nice diagram of map for checking data
     console.log(map);
-
 }
 
 
