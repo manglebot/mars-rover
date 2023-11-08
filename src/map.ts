@@ -9,8 +9,6 @@ export function createMap(rowCount: number, columnCount: number): Array<number> 
         )
     );
 
-        
-
     // shows nice diagram of map for checking data
     console.log(map);
 

@@ -15,8 +15,8 @@ export function operationGo(
   const [mapRows, mapColumns] = createMap(Number(plateauSize[0]), Number(plateauSize[1]));
   // shows nice diagram of map for checking data
 
-  console.log("rowCount: "+mapRows); // Access the number of rows
-  console.log("columnCount: "+mapColumns); // Access the number of columns
+//   console.log("rowCount: "+mapRows); // Access the number of rows
+//   console.log("columnCount: "+mapColumns); // Access the number of columns
 
   // set up vehicle 1 (refactor to allow for vehicles to position on map beyond 9x9)
   const rover1: Vehicle = {
@@ -33,9 +33,8 @@ export function operationGo(
 	mapRows,
 	mapColumns,
   );
-  console.log("moveRover1 = " + moveRover1); // This will print "the return position will appear here!!" to the console
 
-// set up vehicle 2
+	// set up vehicle 2
   const rover2: Vehicle = {
     x: Number(vehicle2StartPosition[0]),
     y: Number(vehicle2StartPosition[1]),
@@ -51,8 +50,7 @@ export function operationGo(
 		mapColumns,
 		moveRover1 as string
 	  );
-	  console.log("moveRover2 = " + moveRover2); // This will print "the return position will appear here!!" to the console
-	
+	//   console.log("moveRover2 = " + moveRover2); // This will print "the return position will appear here!!" to the console
 
   return `${moveRover1} ${moveRover2}`;
 }

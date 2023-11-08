@@ -1,6 +1,5 @@
 import type { Vehicle } from "./vehicle";
 import { ErrorMessages, ErrorHandler, throwError } from "./errorHandler";
-import { createMap } from "./map";
 
 export function moveVehicle(
   vehicleName: Vehicle,
@@ -11,7 +10,7 @@ export function moveVehicle(
   vehicle1endPosition?: string
 ): string | ErrorHandler {
 
-    // refactor to use incomeing number!!! (or perhaps map if still a string)
+    // refactor to use incoming number!!! (or perhaps map if still a string)
     let vehicleOneX: number;
     let vehicleOneY: number;
 
