@@ -4,7 +4,7 @@ import { moveVehicle } from "./src/move-vehicle";
 import { ErrorMessages, ErrorHandler } from "./src/errorHandler";
 
 export function operationGo(
-  plateauSize: string,
+  plateauSize: number[],
   vehicle1StartPosition: string,
   vehicle1MoveInstructions: string,
   vehicle2StartPosition: string,
@@ -12,11 +12,7 @@ export function operationGo(
 ): string  {
 
   // set up map - refactor to allow for map sizes beyond 9x9!! ie .split(' ') or just bring in as numbers
-  const [mapRows, mapColumns] = createMap(Number(plateauSize[0]), Number(plateauSize[1]));
-  // shows nice diagram of map for checking data
-
-//   console.log("rowCount: "+mapRows); // Access the number of rows
-//   console.log("columnCount: "+mapColumns); // Access the number of columns
+  const [mapRows, mapColumns] = createMap(plateauSize[0], plateauSize[1]);
 
   // set up vehicle 1 (refactor to allow for vehicles to position on map beyond 9x9)
   const rover1: Vehicle = {
