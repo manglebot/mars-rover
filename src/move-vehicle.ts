@@ -1,28 +1,27 @@
 import type { Vehicle } from "./vehicle";
-import { ErrorMessages, ErrorHandler, throwError } from "./errorHandler";
+import { ErrorMessages, ErrorHandler, isError, throwError } from "./errorHandler";
 
 export function moveVehicle(
   vehicleName: Vehicle,
-  vehicleStartPosition: string,
+  vehicleStartPosition: (string | number)[],
   moveInstructions: string,
   mapRows: number,
   mapColumns: number,
-  vehicle1endPosition?: string
+  vehicle1endPosition?: (string)
 ): string | ErrorHandler {
 
-    // refactor to use incoming number!!! (or perhaps map if still a string)
     let vehicleOneX: number;
     let vehicleOneY: number;
 
     if (vehicle1endPosition){
-        vehicleOneX =  Number(vehicle1endPosition[0]);
-        vehicleOneY =  Number(vehicle1endPosition[1]);
+        vehicleOneX =  Number(vehicle1endPosition[0]) as number;
+        vehicleOneY =  Number(vehicle1endPosition[1]) as number;
     };
 
     // turn instructions into Array (to iterate through)
   const moveInstructionsArray = moveInstructions.split("");
 
-  const initialDirection = vehicleStartPosition[2];
+  const initialDirection = vehicleStartPosition[2] as string;
   const compass = "NESW";
 
   // turn current position into index number (to cycle through compass)
