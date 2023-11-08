@@ -5,7 +5,15 @@ test('operationGo should return "13N 51E"', () => {
   expect(result).toBe('13N 51E');
 });
 
+test('test for large map', () => {
+  const result = operationGo([50,50],'12N','LMLMLMLMM','33E','MMRMMRMRRM'); // Set map size
+  expect(result).toBe('13N 51E');
+});
 
+
+
+// [1,2,'N']
+// (string | number)[] 
 
 
 
