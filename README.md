@@ -64,3 +64,5 @@ eg {
 This would allow for more than 2 vehicles, and the vehciles could be set up at run time
 rather than in mission control, which seems a bit cluttered.
 
+If I had time, I would like to work out how to turn this into a user input version of sorts.
+
