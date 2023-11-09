@@ -7,15 +7,15 @@ export function moveVehicle(
   moveInstructions: string,
   mapRows: number,
   mapColumns: number,
-  vehicle1endPosition?: (string)
-): string | ErrorHandler {
+  vehicle1endPosition?: number[]
+): (string | number)[] | ErrorHandler {
 
     let vehicleOneX: number;
     let vehicleOneY: number;
 
     if (vehicle1endPosition){
-        vehicleOneX =  Number(vehicle1endPosition[0]) as number;
-        vehicleOneY =  Number(vehicle1endPosition[1]) as number;
+        vehicleOneX =  vehicle1endPosition[0];
+        vehicleOneY =  vehicle1endPosition[1];
     };
 
     // turn instructions into Array (to iterate through)
@@ -85,5 +85,5 @@ export function moveVehicle(
     return (vehicleName.direction = compass[currentDirection]);
   }
 
-  return `${vehicleName.x}${vehicleName.y}${vehicleName.direction}`;
+  return [vehicleName.x,vehicleName.y,vehicleName.direction];
 }
