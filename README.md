@@ -25,9 +25,9 @@ test('operationGo should return "13N 51E"', () => {
   expect(result).toBe('1,3,N 5,1,E');
 });
 
-Here the initial grid size for the map is set in an array, 
-Then the first vehicle locatio is added x,y,direction,
-Then the required movement is added as a text string.
+Here the initial grid size for the map is set in an array.
+Then the first vehicle location is added also as an array. [x, y, direction faced].
+Then the required movement is added as a text string. L for left, R for Right, M to move one place forwards in whichever direction the vehicle is facing.
 The same is then done for the next vehicle.
 
 Key features
